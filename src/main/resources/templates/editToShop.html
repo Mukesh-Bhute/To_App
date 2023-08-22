@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit To-SHOP...</title>
+
+<link rel="stylesheet" th:href="@{/css/edit.css}" >
+
+</head>
+<body>
+<div class="form-container">
+    <p>Edit ToSHOP</p>
+<form class="form" th:action="@{/toshop/update/{id}(id=*{id})}" th:method="post" th:object="${editToShop}">
+    <label for="name">Product Name</label>
+    <input type="text" class="input" placeholder="Enter the Name" th:field="*{name}">
+    
+    <label for="count">count</label>
+    <input type="text" class="input" placeholder="Enter the count" th:field="*{count}"> 
+   
+    <label for="unit">Unit</label>  
+   	<select name="unit" id="unit" placeholder="Select the unit" th:field="*{unit}" style="background-color: #F4F4F4; border: none ; height: 35px;">
+  	<option value="Unit">Unit</option>
+  	<option value="Kg.">Kg.</option>
+  	<option value="g.">g.</option>
+  	<option value="Lit.">Lit.</option>
+  	<option value="ml.">ml.</option>
+  	</select>
+    
+    <button>UPDATE</button>
+</form>
+</div>
+
+</body>
+</html>

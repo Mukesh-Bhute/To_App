@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Account...</title>
+
+<link rel="stylesheet" th:href="@{/css/edit.css}" >
+
+</head>
+<body>
+	
+		<div class="form-container">
+    <p>EDIT ACCOUNT</p>
+<form class="form" th:action="@{/account/update/{id}(id=*{id})}" th:method="post" th:object="${editAccount}">
+    <label for="account">Account</label>
+    <input type="text" class="input" placeholder="Enter the account" th:field="*{account}">
+    
+    <label for="username">Username</label>
+    <input type="text" class="input" placeholder="Enter the username" th:field="*{username}">
+    
+    <label for="password">Password</label>
+    <input type="text" class="input" placeholder="Enter the password" th:field="*{password}"> 
+   
+    
+    <button>UPDATE</button>
+</form>
+</div>
+
+</body>
+</html>
